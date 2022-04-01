@@ -5,10 +5,12 @@ VisualStudioVersion = 15.0.28307.1831
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardPointe-Bolt-Terminal-Library", "CardPointe-Bolt-Terminal-Library\CardPointe-Bolt-Terminal-Library.csproj", "{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WebApplication1", "WebApplication1\WebApplication1.csproj", "{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp-Net-Web-Api-Csharp", "WebApplication1\Asp-Net-Web-Api-Csharp.csproj", "{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}"
 	ProjectSection(ProjectDependencies) = postProject
 		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6} = {D1835705-E8B1-4E87-B38F-F7752CC9D8B6}
 	EndProjectSection
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Visual-Basic-Web-Api", "Visual-Basic-Web-Api\Visual-Basic-Web-Api.vbproj", "{66C93E93-4E53-4CDF-98FD-5521FBA54E92}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -24,6 +26,10 @@ Global
 		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{66C93E93-4E53-4CDF-98FD-5521FBA54E92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{66C93E93-4E53-4CDF-98FD-5521FBA54E92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{66C93E93-4E53-4CDF-98FD-5521FBA54E92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{66C93E93-4E53-4CDF-98FD-5521FBA54E92}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
