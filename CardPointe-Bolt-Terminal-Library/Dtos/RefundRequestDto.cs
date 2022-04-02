@@ -8,8 +8,8 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
 {
     public class RefundRequestDto
     {
-        public RefundHeaders refundHeaders { get; set; }
-        public RefundBody refundBody { get; set; }
+        public RefundHeaders refundHeaders { get; set; } = new RefundHeaders();
+        public RefundBody refundBody { get; set; } = new RefundBody();
     }
 
     public class RefundHeaders

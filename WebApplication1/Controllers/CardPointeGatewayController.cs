@@ -1,30 +1,43 @@
 ﻿using System;
+using System.Configuration;
 using System.Web.Http;
 using CardPointe_Bolt_Terminal_Library.Implementations;
 using CardPointe_Bolt_Terminal_Library.Dtos;
+using Newtonsoft.Json;
 
 namespace WebApplication1.Controllers
 {
     public class CardPointeGatewayController : ApiController
     {
         private CardPointeGateway _cardPointeBoltTerminal;
-        private AuthorizationRequestDto _authorizationRequestDto;
-        private RefundRequestDto _refundRequestDto;
 
-        public CardPointeGatewayController(CardPointeGateway cardPointeGateway,
-            AuthorizationRequestDto authorizationRequestDto,
-            RefundRequestDto refundRequestDto)
+        public CardPointeGatewayController()
         {
-            _cardPointeBoltTerminal = cardPointeGateway;
-            _authorizationRequestDto = authorizationRequestDto;
-            _refundRequestDto = refundRequestDto;
+            _cardPointeBoltTerminal = new CardPointeGateway();
         }
 
         [HttpPost]
         public IHttpActionResult Authorization()
         {
-            var obj = _authorizationRequestDto;
-            obj.authorizationBody.account = "0012";
+            string authorization = ConfigurationManager.AppSettings.GetValues("CardPointe-Authorization")[0];
+            string merchid = ConfigurationManager.AppSettings.GetValues("merchantId")[0];
+
+            var obj = new AuthorizationRequestDto
+            {
+                authorizationHeaders =
+                {
+                    Authorization = authorization
+                },
+                authorizationBody =
+                {
+                    merchid = merchid,
+                    account = "",
+                    expiry = "{Card expiration nnnn}",
+                    amount = "",
+                    currency = "USD",
+                    name = "CC TEST"
+                }
+            };
 
             var result = _cardPointeBoltTerminal.AuthorizationRequest(obj);
             Console.WriteLine("response: ", arg0: result);
@@ -32,14 +45,27 @@ namespace WebApplication1.Controllers
             {
                 return BadRequest("Oops something went wrongQ");
             }
-            return Ok(result);
+            return Ok(JsonConvert.DeserializeObject(result.Content));
         }
 
         [HttpPost]
         public IHttpActionResult Refund()
         {
-            var obj = _refundRequestDto;
-            obj.refundHeaders.Authorization = "fdsafj2l3jl42j34";
+            string authorization = ConfigurationManager.AppSettings.GetValues("CardPointe-Authorization")[0];
+            string merchid = ConfigurationManager.AppSettings.GetValues("merchantId")[0];
+            
+            var obj = new RefundRequestDto
+            {
+                refundHeaders =
+                {
+                    Authorization = authorization
+                },
+                refundBody =
+                {
+                    merchid = merchid,
+                    retref = "092584130137"
+                }
+            };
 
             var result = _cardPointeBoltTerminal.RefundRequest(obj);
             Console.WriteLine("response: ", arg0: result);
@@ -47,7 +73,7 @@ namespace WebApplication1.Controllers
             {
                 return BadRequest("Oops something went wrongQ");
             }
-            return Ok(result);
+            return Ok(JsonConvert.DeserializeObject(result.Content));
         }
     }
 }

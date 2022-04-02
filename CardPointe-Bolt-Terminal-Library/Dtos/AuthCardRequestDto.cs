@@ -4,8 +4,8 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
 {
     public class AuthCardRequestDto
     {
-        public AuthCardHeaders authCardHeaders { get; set; }
-        public AuthCardBody authCardBody { get; set; }
+        public AuthCardHeaders authCardHeaders { get; set; } = new AuthCardHeaders();
+        public AuthCardBody authCardBody { get; set; } = new AuthCardBody();
     }
 
     public class AuthCardHeaders
@@ -42,6 +42,12 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
         public string signatureFormat { get; set; }
         public string signatureImageType { get; set; }
         public string termId { get; set; }
-        public string userFields { get; set; }
+        public UserFields userFields { get; set; } = new UserFields();
+    }
+
+    public class UserFields
+    {
+        public string UDF1 { get; set; }
+        public string UDF2 { get; set; }
     }
 }

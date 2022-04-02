@@ -8,8 +8,8 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
 {
     public class ConnectRequestDto
     {
-        public ConnectHeaders connectHeaders { get; set; }
-        public ConnectBody connectBody { get; set; }
+        public ConnectHeaders connectHeaders { get; set; } = new ConnectHeaders();
+        public ConnectBody connectBody { get; set; } = new ConnectBody();
     }
 
     public class ConnectHeaders
@@ -20,7 +20,6 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
     public class ConnectBody
     {
         public string merchantId { get; set; }
-        public string token { get; set; }
         public string hsn { get; set; }
         public string force { get; set; }
     }

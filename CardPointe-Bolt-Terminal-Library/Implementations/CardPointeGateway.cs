@@ -18,12 +18,12 @@ namespace CardPointe_Bolt_Terminal_Library.Implementations
             {
                 var client = new RestClient("https://fts-uat.cardconnect.com/cardconnect/rest/auth");
                 client.Timeout = -1;
-                var requestObj = new RestRequest(Method.PUT);
+                var requestObj = new RestRequest();
+                requestObj.Method = Method.PUT;
                 requestObj.AddHeader("Content-Type", "application/json");
                 requestObj.AddHeader("Authorization", "Basic " + request.authorizationHeaders.Authorization);
-                var body = request.authorizationBody;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
-                requestObj.AddParameter("application/json", body, ParameterType.RequestBody);
+                requestObj.AddJsonBody(request.authorizationBody);
+
                 IRestResponse response = client.Execute(requestObj);
                 return response;
             }
@@ -39,12 +39,12 @@ namespace CardPointe_Bolt_Terminal_Library.Implementations
             {
                 var client = new RestClient("https://fts-uat.cardconnect.com/cardconnect/rest/refund");
                 client.Timeout = -1;
-                var requestObj = new RestRequest(Method.PUT);
+                var requestObj = new RestRequest();
+                requestObj.Method = Method.PUT;
                 requestObj.AddHeader("Content-Type", "application/json");
-                requestObj.AddHeader("Authorization", request.refundHeaders.Authorization);
-                var body = request.refundBody;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
-                requestObj.AddParameter("application/json", body, ParameterType.RequestBody);
+                requestObj.AddHeader("Authorization", "Basic " + request.refundHeaders.Authorization);
+                requestObj.AddJsonBody(request.refundBody);
+
                 IRestResponse response = client.Execute(requestObj);
                 return response;
             }

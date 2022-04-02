@@ -8,8 +8,8 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
 {
     public class DisconnectRequestDto
     {
-        public DisconnectHeaders disconnectHeaders { get; set; }
-        public DisconnectBody disconnectBody { get; set; }
+        public DisconnectHeaders disconnectHeaders { get; set; } = new DisconnectHeaders();
+        public DisconnectBody disconnectBody { get; set; } = new DisconnectBody();
     }
 
     public class DisconnectHeaders

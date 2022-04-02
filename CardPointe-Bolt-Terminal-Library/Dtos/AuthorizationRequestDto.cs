@@ -8,8 +8,8 @@ namespace CardPointe_Bolt_Terminal_Library.Dtos
 {
     public class AuthorizationRequestDto
     {
-        public AuthorizationHeaders authorizationHeaders { get; set; }
-        public AuthorizationBody authorizationBody { get; set; }
+        public AuthorizationHeaders authorizationHeaders { get; set; } = new AuthorizationHeaders();
+        public AuthorizationBody authorizationBody { get; set; } = new AuthorizationBody();
     }
 
     public class AuthorizationHeaders

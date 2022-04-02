@@ -58,12 +58,12 @@ namespace CardPointe_Bolt_Terminal_Library.Implementations
             {
                 var client = new RestClient("https://bolt-uat.cardpointe.com/api/v2/disconnect");
                 client.Timeout = -1;
-                var requestObj = new RestRequest(Method.POST);
+                var requestObj = new RestRequest();
+                requestObj.Method = Method.POST;
                 requestObj.AddHeader("Content-Type", "application/json");
-                requestObj.AddHeader("Authorization", "Basic " + request.disconnectHeaders.Authorization);
-                var body = request.disconnectBody;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
-                requestObj.AddParameter("application/json",JsonConvert.SerializeObject(body), ParameterType.RequestBody);
+                requestObj.AddHeader("Authorization", request.disconnectHeaders.Authorization);
+                requestObj.AddJsonBody(request.disconnectBody);
+
                 IRestResponse response = client.Execute(requestObj);
                 return response;
             }
@@ -79,12 +79,12 @@ namespace CardPointe_Bolt_Terminal_Library.Implementations
             {
                 var client = new RestClient("https://bolt-uat.cardpointe.com/api/v3/authCard");
                 client.Timeout = -1;
-                var requestObj = new RestRequest(Method.POST);
+                var requestObj = new RestRequest();
+                requestObj.Method = Method.POST;
                 requestObj.AddHeader("Content-Type", "application/json");
-                requestObj.AddHeader("Authorization", "Basic " + request.authCardHeaders.Authorization);
-                var body = request.authCardBody;
-                ServicePointManager.SecurityProtocol = SecurityProtocolType.Tls12 | SecurityProtocolType.Tls11 | SecurityProtocolType.Tls | SecurityProtocolType.Ssl3;
-                requestObj.AddParameter("application/json",JsonConvert.SerializeObject(body), ParameterType.RequestBody);
+                requestObj.AddHeader("Authorization", request.authCardHeaders.Authorization);
+                requestObj.AddJsonBody(request.authCardBody);
+
                 IRestResponse response = client.Execute(requestObj);
                 return response;
             }

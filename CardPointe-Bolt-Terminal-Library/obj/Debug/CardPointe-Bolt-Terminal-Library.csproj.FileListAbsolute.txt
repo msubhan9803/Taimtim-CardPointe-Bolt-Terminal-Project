@@ -27,3 +27,4 @@ C:\Users\Lenovo\source\repos\CardPointe-Bolt-Terminal\CardPointe-Bolt-Terminal-L
 C:\Users\Lenovo\source\repos\CardPointe-Bolt-Terminal\CardPointe-Bolt-Terminal-Library\bin\Debug\System.ValueTuple.xml
 C:\Users\Lenovo\source\repos\CardPointe-Bolt-Terminal\CardPointe-Bolt-Terminal-Library\bin\Debug\Newtonsoft.Json.dll
 C:\Users\Lenovo\source\repos\CardPointe-Bolt-Terminal\CardPointe-Bolt-Terminal-Library\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Lenovo\source\repos\CardPointe-Bolt-Terminal\CardPointe-Bolt-Terminal-Library\obj\Debug\CardPointe-Bolt-Terminal-Library.csprojAssemblyReference.cache
