@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.1831
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CardPointe-Bolt-Terminal-Library", "CardPointe-Bolt-Terminal-Library\CardPointe-Bolt-Terminal-Library.csproj", "{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Asp-Net-Web-Api-Csharp", "WebApplication1\Asp-Net-Web-Api-Csharp.csproj", "{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}"
+	ProjectSection(ProjectDependencies) = postProject
+		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6} = {D1835705-E8B1-4E87-B38F-F7752CC9D8B6}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D1835705-E8B1-4E87-B38F-F7752CC9D8B6}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C0B2F968-2EBE-46ED-B42B-C0032DF840D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {F1C53BB7-CA3F-4A38-AFEC-46178226C2A8}
+	EndGlobalSection
+EndGlobal
